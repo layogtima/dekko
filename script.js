@@ -223,13 +223,13 @@ const MainAppHub = {
             
             <nav class="bottom-tab-bar">
                 <button @click="navigateTo('MainAppHub')" class="focus:outline-none">
-                    <i class="far fa-album-collection"></i>
+                    <i class="far fa-album-collection text-2xl"></i>
                 </button>
                 <button @click="navigateTo('CaptureScreen')" class="focus:outline-none camera-button-stack">
-                     <i class="fa-regular fa-camera-polaroid"></i>
+                     <i class="fa-regular fa-camera-polaroid text-2xl"></i>
                 </button>
                 <button @click="navigateTo('PublicGalleryScreen')" class="focus:outline-none">
-                    <i class="fa-brands fa-galactic-republic"></i>
+                    <i class="fa-brands fa-galactic-republic text-2xl"></i>
                 </button>
             </nav>
         </div>
@@ -520,14 +520,14 @@ const PublicGalleryScreen = {
             <p v-else class="text-gray-500">The gallery is currently empty.</p>
         </div>
          <nav class="bottom-tab-bar">
-            <button @click="navigateTo('MainAppHub')" class="focus:outline-none">
-                <i class="far fa-album-collection"></i>
+            <button @click="navigateTo('MainAppHub')" class="text-lg focus:outline-none">
+                <i class="far fa-album-collection text-2xl"></i>
             </button>
             <button @click="navigateTo('CaptureScreen')" class="focus:outline-none camera-button-stack">
-                <i class="fa-regular fa-camera-polaroid"></i>
+                <i class="fa-regular fa-camera-polaroid text-2xl"></i>
             </button>
             <button @click="navigateTo('PublicGalleryScreen')" class="focus:outline-none">
-                <i class="fa-brands fa-galactic-republic"></i>
+                <i class="fa-brands fa-galactic-republic text-2xl"></i>
             </button>
         </nav>
     </div>
