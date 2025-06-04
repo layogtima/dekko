@@ -53,7 +53,7 @@ This is currently a **UI/UX mock-up and conceptual prototype** built with Vue.js
 
 1.  Clone this repository (once you upload it!).
 2.  Ensure you have an `images` folder in the root directory with (at least):
-    * `Koramangala.jpeg`
+    * `koramangala.jpeg`
     * `geometric.jpeg`
     * `soft-abstract.jpg`
     * `vibrant.jpeg`

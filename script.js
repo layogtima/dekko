@@ -308,7 +308,7 @@ const CaptureScreen = {
             stopCamera(); 
             
             props.navigateTo('DecodeScreen', { 
-                imageUrl: 'images/Koramangala.jpeg', // Using Koramangala for mock decode
+                imageUrl: 'images/koramangala.jpeg', // Using Koramangala for mock decode
                 artTitle: "Captured Street Art",
                 alt: "Newly captured street art, to be decoded.", // Generic alt for new captures
                 isCapture: true 
@@ -382,7 +382,7 @@ const CaptureScreen = {
 const DecodeScreen = {
     props: ['navigateTo', 'routeParams'], 
     setup(props) {
-        const defaultImageUrl = "images/Koramangala.jpeg"; 
+        const defaultImageUrl = "images/koramangala.jpeg"; 
         const defaultTitle = "Koramangala Street Art";
         const defaultAlt = "Graffiti art from Koramangala featuring two stylized female figures and text 'The F Word Feminist is not a BAD ANGRY WORD' and 'Fearlessly Reclaim the Streets'.";
 
@@ -431,7 +431,7 @@ const DecodeScreen = {
 const RemixScreen = {
     props: ['navigateTo', 'routeParams'],
      setup(props) {
-        const originalImageUrl = computed(() => props.routeParams?.originalImageUrl || "images/Koramangala.jpeg");
+        const originalImageUrl = computed(() => props.routeParams?.originalImageUrl || "images/koramangala.jpeg");
         const originalTitle = computed(() => props.routeParams?.originalTitle || "Koramangala Street Art");
         const artToRemixAlt = computed(() => props.routeParams?.originalAlt || "Graffiti art from Koramangala.");
 
@@ -494,7 +494,7 @@ const PublicGalleryScreen = {
     props: ['navigateTo', 'appState'],
     setup(props) {
         const galleryItems = ref([ 
-            { id: 'g1', title: "Community Remix 1", user: "ArtFan01", imageUrl: "images/Koramangala.jpeg", alt: "Koramangala graffiti remix" }, // Using local image
+            { id: 'g1', title: "Community Remix 1", user: "ArtFan01", imageUrl: "images/koramangala.jpeg", alt: "Koramangala graffiti remix" }, // Using local image
             { id: 'g2', title: "Street Art Decode", user: "UrbanExplorer", imageUrl: "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2015/10/Featured3.jpg?fm=webp&w=750&h=500&dpr=2", alt: "Street art from LBB" },
             { id: 'g3', title: "My Abstract Take", user: "CreativeSoul", imageUrl: "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2015/12/Malleshwaram.jpeg?fm=webp&w=750&h=500&dpr=2", alt: "Malleshwaram street art" },
             { id: 'g4', title: "Monochrome Mood", user: "ShadowWalker", imageUrl: "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2015/10/Ullas-Hydoor.jpeg?fm=webp&w=750&h=500&dpr=2", alt: "Ullas Hydoor street art" },

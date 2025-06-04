@@ -4,7 +4,8 @@
 /* Apply MONO font globally and basic body styling */
 body {
     font-family: 'Space Mono', monospace;
-    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     display: flex;
     align-items: center; /* Vertically center the app-container */
     justify-content: center; /* Horizontally center the app-container */
@@ -61,7 +62,7 @@ body {
 
 /* Styling for the bottom tab bar to be contained */
 .bottom-tab-bar {
-    position: absolute; /* Positioned relative to #app */
+    position: fixed; /* Positioned relative to #app */
     bottom: 0;
     left: 0;
     right: 0;
