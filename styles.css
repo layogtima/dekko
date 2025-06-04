@@ -1,0 +1,208 @@
+/* Import Space Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Apply MONO font globally and basic body styling */
+body {
+    font-family: 'Space Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Vertically center the app-container */
+    justify-content: center; /* Horizontally center the app-container */
+    margin: 0;
+    padding: 20px 0; 
+    box-sizing: border-box;
+    background-color: #e5e7eb; /* Page background */
+}
+
+#app-container {
+    margin: 0 auto; /* Centers the container */
+    overflow: hidden; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+    height: 80vh; 
+    max-height: 900px; 
+    border-radius: 10px; 
+    transition: max-width 0.3s ease-in-out, height 0.3s ease-in-out; 
+    position: relative; /* For absolute positioning of children like the bottom bar if needed */
+}
+
+#app-container.view-phone {
+    max-width: 390px; 
+    min-height: 90dvh; /* Fixed height for phone consistency */
+}
+
+/* Tablet view removed */
+
+#app-container.view-desktop {
+    max-width: 100%; 
+    width: 100%;
+    height: 100vh; 
+    max-height: 100vh;
+    border-radius: 0; 
+}
+
+
+#app {
+    background-color: #ffffff; /* MONO white for the app itself */
+    color: #000000; /* MONO black for app text */
+    height: 100%; /* Fill the #app-container */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow scrolling within the app if content overflows */
+    position: relative; /* Important for positioning elements like the bottom bar within #app */
+}
+
+
+/* Utility class for MONO superscript style text if needed often */
+.text-super-mono {
+    font-size: 0.6em; 
+    vertical-align: super;
+    letter-spacing: normal; 
+}
+
+/* Styling for the bottom tab bar to be contained */
+.bottom-tab-bar {
+    position: absolute; /* Positioned relative to #app */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Takes full width of its parent #app */
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0; /* Reduced padding a bit */
+    border-top: 1px solid #333333; /* Darker border for MONO */
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.bottom-tab-bar button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 10px; /* Smaller text for tab labels */
+    padding: 4px;
+    flex-grow: 1; /* Distribute space evenly */
+}
+.bottom-tab-bar button .fa-stack { /* For the camera button */
+    font-size: 16px; /* Control stack size */
+}
+
+.bottom-tab-bar button i, .bottom-tab-bar button .fa-stack { /* Target icons and stacks */
+    font-size: 20px; /* Icon size */
+    margin-bottom: 2px; /* Space between icon and text */
+}
+
+
+.bottom-tab-bar .camera-button-stack {
+    transform: scale(1.1);
+}
+
+.bottom-tab-bar .camera-button-stack .fa-circle { /* Outer circle */
+    color: white;
+}
+.bottom-tab-bar .camera-button-stack .fa-camera { /* Inner icon */
+    color: black;
+}
+
+
+/* Camera Feed UI specific styles */
+.camera-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 10; /* Above the video feed */
+    pointer-events: none; /* Allow clicks to pass through overlay to video/buttons underneath if needed */
+}
+
+.camera-overlay > * {
+    pointer-events: auto; /* Re-enable pointer events for children like buttons */
+}
+
+.camera-button {
+    background-color: rgba(255, 255, 255, 0.8); /* MONO white, slightly transparent */
+    color: #000000; /* MONO black */
+    border: 2px solid #000000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.camera-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+.camera-button i {
+    font-size: 24px;
+}
+
+.camera-top-bar button, .camera-bottom-controls button {
+    background: transparent;
+    border: none;
+    color: white;
+    text-shadow: 0 0 3px black; /* Make icons more visible on varied backgrounds */
+}
+.camera-top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.camera-bottom-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.capture-ring {
+    width: 70px;
+    height: 70px;
+    border: 4px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px; /* Space between outer and inner */
+}
+.capture-inner-dot {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.capture-inner-dot:active {
+    background-color: #cccccc;
+}
+
+.message-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+}
+.message-box button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+}
