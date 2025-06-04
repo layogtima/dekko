@@ -4,7 +4,6 @@
 /* Apply MONO font globally and basic body styling */
 body {
     font-family: 'Space Mono', monospace;
-    min-height: 100svh;
     min-height: 100dvh;
     display: flex;
     align-items: center; /* Vertically center the app-container */
