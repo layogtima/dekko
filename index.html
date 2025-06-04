@@ -24,7 +24,7 @@
         /* Styles for the view switcher buttons */
         .view-switcher {
             position: fixed;
-            top: 10px;
+            bottom: 10px;
             left: 10px;
             z-index: 1000;
             background: rgba(255,255,255,0.9);
@@ -64,12 +64,12 @@
 
     <!-- View Switcher UI -->
     <div class="view-switcher">
-        <button id="viewPhone" title="Phone View"><i class="far fa-mobile-alt"></i></button>
-        <button id="viewDesktop" class="active" title="Desktop View"><i class="far fa-desktop"></i></button>
+        <button id="viewPhone" class="active" title="Phone View"><i class="far fa-mobile-alt"></i></button>
+        <button id="viewDesktop"  title="Desktop View"><i class="far fa-desktop"></i></button>
     </div>
 
     <!-- App Container - This will be constrained -->
-    <div id="app-container" class="view-desktop w-full max-w-full relative">
+    <div id="app-container" class="view-phone w-full max-w-full relative">
         <!-- Vue App Mount Point -->
         <div id="app" class="flex flex-col h-full bg-white text-black relative"> <!-- Added position:relative for bottom bar -->
             <!-- Vue will render components here -->
